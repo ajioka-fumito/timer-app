@@ -15,6 +15,11 @@
 		9EAFB5EE24022FFC00F6C485 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAFB5EC24022FFC00F6C485 /* LaunchScreen.storyboard */; };
 		9EAFB5F924022FFC00F6C485 /* timer_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB5F824022FFC00F6C485 /* timer_appTests.swift */; };
 		9EAFB60424022FFC00F6C485 /* timer_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB60324022FFC00F6C485 /* timer_appUITests.swift */; };
+		9EAFB614240239FB00F6C485 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB613240239FB00F6C485 /* Data.swift */; };
+		9EAFB6162402410200F6C485 /* SimpleTimerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB6152402410200F6C485 /* SimpleTimerSettingView.swift */; };
+		9EAFB6182402411C00F6C485 /* CustomTimerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB6172402411C00F6C485 /* CustomTimerSettingView.swift */; };
+		9EAFB61A240254D900F6C485 /* SimpleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB619240254D900F6C485 /* SimpleTimerView.swift */; };
+		9EAFB61C240258FD00F6C485 /* PublicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB61B240258FD00F6C485 /* PublicFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		9EAFB5FF24022FFC00F6C485 /* timer-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "timer-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAFB60324022FFC00F6C485 /* timer_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timer_appUITests.swift; sourceTree = "<group>"; };
 		9EAFB60524022FFC00F6C485 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EAFB613240239FB00F6C485 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		9EAFB6152402410200F6C485 /* SimpleTimerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimerSettingView.swift; sourceTree = "<group>"; };
+		9EAFB6172402411C00F6C485 /* CustomTimerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerSettingView.swift; sourceTree = "<group>"; };
+		9EAFB619240254D900F6C485 /* SimpleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimerView.swift; sourceTree = "<group>"; };
+		9EAFB61B240258FD00F6C485 /* PublicFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,11 @@
 				9EAFB5E124022FFB00F6C485 /* AppDelegate.swift */,
 				9EAFB5E324022FFB00F6C485 /* SceneDelegate.swift */,
 				9EAFB5E524022FFB00F6C485 /* ContentView.swift */,
+				9EAFB6152402410200F6C485 /* SimpleTimerSettingView.swift */,
+				9EAFB619240254D900F6C485 /* SimpleTimerView.swift */,
+				9EAFB6172402411C00F6C485 /* CustomTimerSettingView.swift */,
+				9EAFB613240239FB00F6C485 /* Data.swift */,
+				9EAFB61B240258FD00F6C485 /* PublicFunction.swift */,
 				9EAFB5E724022FFC00F6C485 /* Assets.xcassets */,
 				9EAFB5EC24022FFC00F6C485 /* LaunchScreen.storyboard */,
 				9EAFB5EF24022FFC00F6C485 /* Info.plist */,
@@ -267,9 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EAFB6182402411C00F6C485 /* CustomTimerSettingView.swift in Sources */,
 				9EAFB5E224022FFB00F6C485 /* AppDelegate.swift in Sources */,
+				9EAFB6162402410200F6C485 /* SimpleTimerSettingView.swift in Sources */,
+				9EAFB61A240254D900F6C485 /* SimpleTimerView.swift in Sources */,
+				9EAFB61C240258FD00F6C485 /* PublicFunction.swift in Sources */,
 				9EAFB5E424022FFB00F6C485 /* SceneDelegate.swift in Sources */,
 				9EAFB5E624022FFB00F6C485 /* ContentView.swift in Sources */,
+				9EAFB614240239FB00F6C485 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
