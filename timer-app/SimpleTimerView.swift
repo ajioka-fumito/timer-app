@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-
+import AudioToolbox
 struct SimpleTimerView: View {
     @EnvironmentObject var data : Data
     var body: some View {
@@ -29,10 +29,15 @@ struct TimerView: View {
     
     var body: some View{
         let time = self.timer.sub(self.data.hour, self.data.minute, self.data.second)
+        let soundIdRing:SystemSoundID = 1336
+        if (time.hour!+time.minute!+time.second!)==0 {
+            AudioServicesPlaySystemSound(soundIdRing)
+            self.timer.reset()
+        }
         let View =
             VStack{
                 Text(String(format:"%02d:%02d:%02d",time.hour!,time.minute!,time.second!))
-                    .font(.custom("AppleSDGothicNeo", size: 100))
+                    .font(.custom("AppleSDGothicNeo", size: 80))
                     .foregroundColor(self.data.simpleAcce)
                 
                 HStack{
@@ -56,8 +61,10 @@ struct TimerView: View {
                             .frame(width:self.data.width5, height:self.data.width5)
                             .foregroundColor(self.data.simpleAcce)
                     }
+                    
                 }
         }
+        
         return View
     }
 }
@@ -73,6 +80,7 @@ class TimerObject:ObservableObject{
     
     func stop(){
         timer.invalidate()
+        
     }
     
     func reset(){
@@ -80,11 +88,10 @@ class TimerObject:ObservableObject{
         self.counter = 0
     }
     
-    
-    var dateFrom = Calendar.current.date(from:DateComponents(year:2000,month:1,day:1,hour:0,minute:0,second:0))!
     func sub(_ hour:Int, _ minute:Int, _ second:Int)->DateComponents{
-        let dateTo1 = Calendar.current.date(from:DateComponents(year:2000,month:1,day:1,hour:hour,minute:minute,second:second))!
+        let dateTo1 = Calendar.current.date(from:DateComponents(hour:hour,minute:minute,second:second))!
         let dateTo2 = Calendar.current.date(byAdding: .second, value: self.counter , to: dateTo1)!
+        
         return Calendar.current.dateComponents([.hour,.minute,.second], from: dateTo2)
     }
 }

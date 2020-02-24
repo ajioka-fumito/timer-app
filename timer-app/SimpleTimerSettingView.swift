@@ -58,11 +58,15 @@ struct SimpleTimerSettingView: View {
                 .foregroundColor(self.data.simpleAcce)
                 Spacer()
                     .frame(width:UIScreen.main.bounds.size.width,height:150)
-                Button(action:{self.isModal=true}){
-                    
+                Button(action:{
+                    if (self.data.hour+self.data.minute+self.data.second)>0{
+                        self.isModal = true
+                    }
+                    }){
+                        
                     Text("START")
                         .frame(width:UIScreen.main.bounds.size.width/2,height: 100)
-                        .font(.custom("AppleSDGothicNeo", size: 60))
+                        .font(.custom("AppleSDGothicNeo", size: 50))
                         .foregroundColor(self.data.simpleAcce)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
