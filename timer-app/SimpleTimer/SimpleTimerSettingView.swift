@@ -13,7 +13,7 @@ struct SimpleTimerSettingView: View {
     @EnvironmentObject var data : Data
     var body: some View {
         ZStack{
-            self.data.simpleBase.edgesIgnoringSafeArea(.all)
+            Color.base.edgesIgnoringSafeArea(.all)
             VStack{
                 // Picker
                 HStack{
@@ -25,10 +25,10 @@ struct SimpleTimerSettingView: View {
                                 .font(.custom("",size:20))
                         }
                     }
-                    .frame(width:self.data.width5,height:100)
+                    .frame(width:UIScreen.width(1,5),height:100)
                     .clipped()
                     Text("h")
-                        .frame(width:self.data.width20,height:100)
+                        .frame(width:UIScreen.width(1,20),height:100)
                     // minute
                     Picker(selection: self.$data.minute, label: Text("")){
                         ForEach(0 ..< 60){ minute in
@@ -37,10 +37,10 @@ struct SimpleTimerSettingView: View {
                                 .font(.custom("",size:20))
                         }
                     }
-                    .frame(width:self.data.width5,height:100)
+                    .frame(width:UIScreen.width(1,5),height:100)
                     .clipped()
                     Text("m")
-                        .frame(width:self.data.width20,height:100)
+                        .frame(width:UIScreen.width(1,20),height:100)
                     
                     // second
                     Picker(selection: self.$data.second, label: Text("")){
@@ -50,21 +50,15 @@ struct SimpleTimerSettingView: View {
                                 .font(.custom("",size:20))
                         }
                     }
-                    .frame(width:self.data.width5,height:100)
+                    .frame(width:UIScreen.width(1,5),height:100)
                     .clipped()
                     Text("s")
-                        .frame(width:self.data.width20,height:50)
+                        .frame(width:UIScreen.width(1,20),height:50)
                 }
-                .frame(width:self.data.width20*18,height:150)
+                .frame(width:UIScreen.width(18,20),height:150)
                 .foregroundColor(.white)
                 .background(
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 12)
-                            .frame(width:self.data.width15*14)
-                        .foregroundColor(self.data.simpleBase)
-                            .shadow(color: self.data.simpleBaseLight, radius: 12, x: -6, y: -6)
-                            .shadow(color: self.data.simpleBaseDark, radius: 12, x: 6, y: 6)
-                    }
+                    neumorphismBackground()
                     )
                 
                 Spacer()
@@ -76,18 +70,12 @@ struct SimpleTimerSettingView: View {
                 }){
                     
                     Text("START")
-                        .frame(width:UIScreen.main.bounds.size.width/2,height: 100)
+                        .frame(width:UIScreen.width(1,2),height: 100)
                         .font(.custom("", size: 50))
                         .foregroundColor(.white)
                         .padding()
                         .background(
-                            ZStack{
-                                RoundedRectangle(cornerRadius: 12,style: .continuous)
-                                    .foregroundColor(self.data.simpleBase)
-                                    .shadow(color: self.data.simpleBaseLight, radius: 12, x: -6, y: -6)
-                                    .shadow(color: self.data.simpleBaseDark,radius:12,x:6,y:6)
-                                
-                            }
+                            neumorphismBackground()
                     )
                 }
                 .sheet(isPresented: self.$isModal){
