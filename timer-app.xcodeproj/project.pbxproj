@@ -19,7 +19,9 @@
 		9EAFB6162402410200F6C485 /* SimpleTimerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB6152402410200F6C485 /* SimpleTimerSettingView.swift */; };
 		9EAFB6182402411C00F6C485 /* CustomTimerSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB6172402411C00F6C485 /* CustomTimerSettingView.swift */; };
 		9EAFB61A240254D900F6C485 /* SimpleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB619240254D900F6C485 /* SimpleTimerView.swift */; };
-		9EAFB61C240258FD00F6C485 /* PublicFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAFB61B240258FD00F6C485 /* PublicFunction.swift */; };
+		9ED652362403CC33008B1C60 /* SimpleTimerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED652352403CC33008B1C60 /* SimpleTimerObject.swift */; };
+		9ED6523B2403F776008B1C60 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6523A2403F776008B1C60 /* ButtonView.swift */; };
+		9ED6523D2404DD08008B1C60 /* ButtonView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED6523C2404DD08008B1C60 /* ButtonView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +60,9 @@
 		9EAFB6152402410200F6C485 /* SimpleTimerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimerSettingView.swift; sourceTree = "<group>"; };
 		9EAFB6172402411C00F6C485 /* CustomTimerSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerSettingView.swift; sourceTree = "<group>"; };
 		9EAFB619240254D900F6C485 /* SimpleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimerView.swift; sourceTree = "<group>"; };
-		9EAFB61B240258FD00F6C485 /* PublicFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFunction.swift; sourceTree = "<group>"; };
+		9ED652352403CC33008B1C60 /* SimpleTimerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimerObject.swift; sourceTree = "<group>"; };
+		9ED6523A2403F776008B1C60 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		9ED6523C2404DD08008B1C60 /* ButtonView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E5A70482403C99A006DE265 /* SimpleTimer */ = {
+			isa = PBXGroup;
+			children = (
+				9EAFB6152402410200F6C485 /* SimpleTimerSettingView.swift */,
+				9EAFB619240254D900F6C485 /* SimpleTimerView.swift */,
+				9ED652352403CC33008B1C60 /* SimpleTimerObject.swift */,
+			);
+			path = SimpleTimer;
+			sourceTree = "<group>";
+		};
 		9EAFB5D524022FFB00F6C485 = {
 			isa = PBXGroup;
 			children = (
@@ -109,14 +123,14 @@
 		9EAFB5E024022FFB00F6C485 /* timer-app */ = {
 			isa = PBXGroup;
 			children = (
+				9ED6523A2403F776008B1C60 /* ButtonView.swift */,
+				9ED6523C2404DD08008B1C60 /* ButtonView2.swift */,
 				9EAFB5E124022FFB00F6C485 /* AppDelegate.swift */,
 				9EAFB5E324022FFB00F6C485 /* SceneDelegate.swift */,
 				9EAFB5E524022FFB00F6C485 /* ContentView.swift */,
-				9EAFB6152402410200F6C485 /* SimpleTimerSettingView.swift */,
-				9EAFB619240254D900F6C485 /* SimpleTimerView.swift */,
-				9EAFB6172402411C00F6C485 /* CustomTimerSettingView.swift */,
+				9E5A70482403C99A006DE265 /* SimpleTimer */,
+				9ED652342403CB8C008B1C60 /* customTimer */,
 				9EAFB613240239FB00F6C485 /* Data.swift */,
-				9EAFB61B240258FD00F6C485 /* PublicFunction.swift */,
 				9EAFB5E724022FFC00F6C485 /* Assets.xcassets */,
 				9EAFB5EC24022FFC00F6C485 /* LaunchScreen.storyboard */,
 				9EAFB5EF24022FFC00F6C485 /* Info.plist */,
@@ -149,6 +163,14 @@
 				9EAFB60524022FFC00F6C485 /* Info.plist */,
 			);
 			path = "timer-appUITests";
+			sourceTree = "<group>";
+		};
+		9ED652342403CB8C008B1C60 /* customTimer */ = {
+			isa = PBXGroup;
+			children = (
+				9EAFB6172402411C00F6C485 /* CustomTimerSettingView.swift */,
+			);
+			path = customTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,10 +308,12 @@
 				9EAFB5E224022FFB00F6C485 /* AppDelegate.swift in Sources */,
 				9EAFB6162402410200F6C485 /* SimpleTimerSettingView.swift in Sources */,
 				9EAFB61A240254D900F6C485 /* SimpleTimerView.swift in Sources */,
-				9EAFB61C240258FD00F6C485 /* PublicFunction.swift in Sources */,
+				9ED652362403CC33008B1C60 /* SimpleTimerObject.swift in Sources */,
 				9EAFB5E424022FFB00F6C485 /* SceneDelegate.swift in Sources */,
 				9EAFB5E624022FFB00F6C485 /* ContentView.swift in Sources */,
 				9EAFB614240239FB00F6C485 /* Data.swift in Sources */,
+				9ED6523B2403F776008B1C60 /* ButtonView.swift in Sources */,
+				9ED6523D2404DD08008B1C60 /* ButtonView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

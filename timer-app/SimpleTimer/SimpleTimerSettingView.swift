@@ -22,55 +22,73 @@ struct SimpleTimerSettingView: View {
                         ForEach(0 ..< 24){ hour in
                             Text("\(hour)")
                                 .tag(hour)
-                                .font(.custom("AppleSDGothicNeo",size:20))
+                                .font(.custom("",size:20))
                         }
                     }
-                    .frame(width:UIScreen.main.bounds.size.width/5,height:100)
+                    .frame(width:self.data.width5,height:100)
                     .clipped()
                     Text("h")
-                        .frame(width:UIScreen.main.bounds.size.width/15,height:100)
+                        .frame(width:self.data.width20,height:100)
                     // minute
                     Picker(selection: self.$data.minute, label: Text("")){
                         ForEach(0 ..< 60){ minute in
                             Text("\(minute)")
                                 .tag(minute)
-                                .font(.custom("AppleSDGothicNeo",size:20))
+                                .font(.custom("",size:20))
                         }
                     }
-                    .frame(width:UIScreen.main.bounds.size.width/5,height:100)
+                    .frame(width:self.data.width5,height:100)
                     .clipped()
                     Text("m")
-                        .frame(width:UIScreen.main.bounds.size.width/15,height:100)
+                        .frame(width:self.data.width20,height:100)
                     
                     // second
                     Picker(selection: self.$data.second, label: Text("")){
                         ForEach(0 ..< 24){ second in
                             Text("\(second)")
                                 .tag(second)
-                                .font(.custom("AppleSDGothicNeo",size:20))
+                                .font(.custom("",size:20))
                         }
                     }
-                    .frame(width:UIScreen.main.bounds.size.width/5,height:100)
+                    .frame(width:self.data.width5,height:100)
                     .clipped()
                     Text("s")
-                        .frame(width:UIScreen.main.bounds.size.width/15,height:100)
+                        .frame(width:self.data.width20,height:50)
                 }
-                .foregroundColor(self.data.simpleAcce)
+                .frame(width:self.data.width20*18,height:150)
+                .foregroundColor(.white)
+                .background(
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 12)
+                            .frame(width:self.data.width15*14)
+                        .foregroundColor(self.data.simpleBase)
+                            .shadow(color: self.data.simpleBaseLight, radius: 12, x: -6, y: -6)
+                            .shadow(color: self.data.simpleBaseDark, radius: 12, x: 6, y: 6)
+                    }
+                    )
+                
                 Spacer()
                     .frame(width:UIScreen.main.bounds.size.width,height:150)
                 Button(action:{
                     if (self.data.hour+self.data.minute+self.data.second)>0{
                         self.isModal = true
                     }
-                    }){
-                        
+                }){
+                    
                     Text("START")
                         .frame(width:UIScreen.main.bounds.size.width/2,height: 100)
-                        .font(.custom("AppleSDGothicNeo", size: 50))
-                        .foregroundColor(self.data.simpleAcce)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 20)
-                                .stroke(self.data.simpleAcce,lineWidth: 10))
+                        .font(.custom("", size: 50))
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 12,style: .continuous)
+                                    .foregroundColor(self.data.simpleBase)
+                                    .shadow(color: self.data.simpleBaseLight, radius: 12, x: -6, y: -6)
+                                    .shadow(color: self.data.simpleBaseDark,radius:12,x:6,y:6)
+                                
+                            }
+                    )
                 }
                 .sheet(isPresented: self.$isModal){
                     SimpleTimerView().environmentObject(self.data)
