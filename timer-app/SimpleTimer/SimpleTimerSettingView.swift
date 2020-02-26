@@ -21,8 +21,8 @@ struct SimpleTimerSettingView: View {
                     Picker(selection: self.$data.hour, label: Text("")){
                         ForEach(0 ..< 24){ hour in
                             Text("\(hour)")
-                                .tag(hour)
-                                .font(.custom("",size:20))
+                            .font(.system(size:30)).fontWeight(.heavy)
+                            .tag(hour)
                         }
                     }
                     .frame(width:UIScreen.width(1,5),height:100)
@@ -33,8 +33,9 @@ struct SimpleTimerSettingView: View {
                     Picker(selection: self.$data.minute, label: Text("")){
                         ForEach(0 ..< 60){ minute in
                             Text("\(minute)")
+                                .font(.system(size:30)).fontWeight(.heavy)
                                 .tag(minute)
-                                .font(.custom("",size:20))
+                                
                         }
                     }
                     .frame(width:UIScreen.width(1,5),height:100)
@@ -46,17 +47,21 @@ struct SimpleTimerSettingView: View {
                     Picker(selection: self.$data.second, label: Text("")){
                         ForEach(0 ..< 24){ second in
                             Text("\(second)")
+                                .font(.system(size:30)).fontWeight(.heavy)
                                 .tag(second)
-                                .font(.custom("",size:20))
+                                
+                                
                         }
                     }
                     .frame(width:UIScreen.width(1,5),height:100)
                     .clipped()
                     Text("s")
                         .frame(width:UIScreen.width(1,20),height:50)
+                        
+                        
                 }
                 .frame(width:UIScreen.width(18,20),height:150)
-                .foregroundColor(.white)
+                .colorInvert()
                 .background(
                     neumorphismBackground()
                     )
@@ -72,7 +77,7 @@ struct SimpleTimerSettingView: View {
                     Text("START")
                         .frame(width:UIScreen.width(1,2),height: 100)
                         .font(.custom("", size: 50))
-                        .foregroundColor(.white)
+                        .colorInvert()
                         .padding()
                         .background(
                             neumorphismBackground()
@@ -82,7 +87,7 @@ struct SimpleTimerSettingView: View {
                     SimpleTimerView().environmentObject(self.data)
                 }
                 Spacer()
-                    .frame(width:UIScreen.main.bounds.width,height:50)
+                    .frame(width:UIScreen.main.bounds.width,height:50.0)
             }
         }
     }

@@ -21,7 +21,7 @@ struct ContentView: View {
                         Text("Simple Timer")
                             .frame(width:UIScreen.width(17,20))
                             .font(.custom("", size: 50))
-                            .foregroundColor(.white)
+                            .foregroundColor(Color.invert)
                             .padding()
                             .background(
                                 neumorphismBackground()
